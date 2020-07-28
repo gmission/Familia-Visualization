@@ -1,0 +1,268 @@
+<nz-layout id="tm">
+  <nz-header nz-row id="header">
+    <div class="header">
+
+      <div nz-col nzLg="24">
+        <div class="logo" nz-col nzSpan="8"></div>
+        <div nz-col nzSpan="16">
+          <nz-anchor class="menu" [nzAffix]="false" id="m">
+
+            <ul nz-menu class="menu" [nzMode]="'horizontal'">
+              <li nz-menu-item>
+                <nz-link nzHref="#title-index" nzTitle="首页"></nz-link>
+              </li>
+              <li nz-menu-item>
+                <nz-link nzHref="#title-infer" nzTitle="文档语义分析"></nz-link>
+              </li>
+              <li nz-menu-item>
+                <nz-link nzHref="#title-key" nzTitle="文档关键词抽取"></nz-link>
+              </li>
+              <li nz-menu-item>
+                <nz-link nzHref="#title-sl" nzTitle="短文本-长文本语义匹配"></nz-link>
+              </li>
+              <li nz-menu-item>
+                <nz-link nzHref="#title-ll" nzTitle="长文本-长文本语义匹配"></nz-link>
+              </li>
+            </ul>
+          </nz-anchor>
+        </div>
+      </div>
+    </div>
+  </nz-header>
+  <nz-content nz-row>
+  <div nz-row style="margin: 0 auto;">
+
+
+    <div nz-row nzGutter="32" style="margin-top: 260px;" class="introduction">
+      <div nz-col nzLg="24">
+        <div nz-col nzSpan="10">
+          <h3 style="font-size:48px">Semantic+</h3>
+          <div style="margin-bottom:20px; font-size:18px">
+            Semantic+语义分析套件基于业界领先的贝叶斯认知计算技术构建，支持用户以“拿来即用”的方式进行语义分析、关键词抽取、语义匹配等多种算子，可以灵活支持搜索、推荐、对话机器人等多种应用。</div>
+        </div>
+      </div>
+    </div>
+    <div nz-row nzGutter="32" style="margin-top:438px" class="block">
+      <div nz-col nzLg="24">
+        <h3 id="title-infer">文档语义分析</h3>
+        <div style="font-size:16px;color:#4A4A4A;padding-left:28px;">用于文档分类、聚类、内容丰富度分析、CTR预估等多种任务。</div>
+      </div>
+      <div nz-col nzLg="24" style="margin-top:55px;">
+        <h4>输入文档</h4>
+        <textarea
+          [(ngModel)]="infer.text"
+          name="" id="" cols="30" rows="10" nz-input
+          style="height:314px;padding:25px 20px;box-shadow: 0px 15px 18px 0px rgba(125,138,159,0.13);border:1px solid rgba(201,209,219,0.1);"
+        >
+            5月18日上午，全市公安机关2019年处置大规模群体性事件实兵对抗演练集训班开训仪式在警官培训中心成功举办。市局党委委员、政治部主任朱青春出席仪式并讲话，市局党委委员李彦主持。
+朱青春同志充分肯定了近年来全市巡特警工作取得的成绩，并就全力办好集训班提出三点要求: 一是要提高政治站位，严抓作风纪律。要提高政治站位，充分认识参加此次集训的重要意义，克服困难抓好集训工作，培训期问要严格遵守市局各项纪律制度。二是要树立娄警形象，彰显铁军风采。要发扬特警五特精神，强化战斗素养，提升实战能力，圆满完成集训任务，力争在省厅演练中为娄底公安争光添彩。三是要加强实战演练，促进战训结合。要理清思路、提振精神，以“真刀真枪”上阵的态度投入到集训中去，以练代战、以练促战达到战训结合的目的。
+          </textarea>
+        <button nz-button [nzLoading]="infer.loading" nzType="primary" (click)="infer.click()"
+                style="margin-top:25px;">语义分析
+        </button>
+
+      </div>
+      <div nz-col nzLg="24" style="margin-top:24px">
+        <div nz-row nzGutter="32">
+          <div nz-col nzSpan="12">
+            <div
+              style="height:500px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+              <div class="topic">文档主题分布</div>
+              <div echarts (chartClick)="infer.test($event)" [options]="infer.option"></div>
+            </div>
+          </div>
+          <div nz-col nzSpan="12">
+            <div nz-row
+                 style="height:500px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+              <div nz-col nzSpan="24">
+                <div class="topic">"{{infer.top1}}" 主题下的词分布</div>
+
+                <div echarts style="height: 450px;" [options]="infer.optionPieFirst"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div nz-row nzGutter="32" style="margin-top:220px;" class="block">
+      <div nz-col nzLg="24">
+        <div nz-row>
+          <h3 id="title-key">文档关键词抽取</h3>
+        </div>
+        <div nz-row nzGutter="32" style="margin-top: 30px;">
+          <div nz-col nzLg="15">
+            <div style="
+               padding:34px 40px;
+                height:517px;
+                background:rgba(255,255,255,1);
+                box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);
+                border-radius:5px;
+                border:1px solid rgba(201,209,219,0.1);">
+              <textarea name="" nz-input style="width:100%;height:100%;border: none;" [(ngModel)]="keyWord.text">
+                5月18日上午，全市公安机关2019年处置大规模群体性事件实兵对抗演练集训班开训仪式在警官培训中心成功举办。市局党委委员、政治部主任朱青春出席仪式并讲话，市局党委委员李彦主持。
+              </textarea>
+            </div>
+
+          </div>
+          <div nz-col nzLg="9">
+            <div nz-row style="height: 517px;background: #fff;border-radius: 5px;">
+              <div nz-col nzLg="24" class="topic y-topic">关键词相似度打分</div>
+              <div nz-col style="height: 400px" nzLg="24" echarts [options]="keyWord.optionWord"></div>
+
+            </div>
+
+          </div>
+          <div nz-col nzLg="24">
+            <button nz-button [nzLoading]="keyWord.loading" nzType="primary" style="margin-top:25px;"
+                    (click)="keyWord.click()">抽取关键词
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div nz-row nzGutter="32" style="margin-top:200px;" class="block">
+      <div nz-row>
+        <h3 id="title-sl">短文本 - 长文本语义匹配</h3>
+      </div>
+      <div nz-row nzGutter="32">
+        <div nz-col nzLg="12">
+          <div nz-row style="margin-top: 62px">
+            <h4>短文本输入框</h4>
+          </div>
+          <div nz-row style="background:rgba(255,255,255,1);
+box-shadow:0px 44px 54px 0px rgba(125,138,159,0.13);
+border-radius:5px;
+border:1px solid rgba(201,209,219,0.1);padding:20px;">
+            <textarea nz-input name="" cols="30" rows="1" [(ngModel)]="sl.sText"></textarea>
+          </div>
+
+          <div nz-row style="margin-top:40px;">
+            <h4>长文本输入框</h4>
+          </div>
+          <div nz-row>
+            <div
+              style="height:300px;padding:25px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+              <textarea nz-input name="" cols="30" rows="10" [(ngModel)]="sl.lText"></textarea>
+            </div>
+          </div>
+
+        </div>
+        <div nz-col nzLg="12">
+          <div
+            style="margin-top:96px;height:448px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+            <div class="topic" style="margin-left: 35%">文档主题分布</div>
+
+            <div echarts style="height: 370px" [options]="sl.option"></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div nz-row>
+
+        <div nz-row nzGutter="0">
+          <div nz-col nzSpan="4">
+            <button nz-button [nzLoading]="sl.loading" nzType="primary" style="margin-top: 30px;" (click)="sl.click()">
+              立即匹配
+            </button>
+          </div>
+          <div nz-col nzSpan="16">
+            <div class="circle" style="margin-top: -470px;">
+              <div class="icon"></div>
+              <div class="text">匹配得分</div>
+              <div class="num">{{sl.point.toFixed(5)}}</div>
+            </div>
+          </div>
+          <div nz-col nzSpan="4"></div>
+        </div>
+      </div>
+
+    </div>
+    <div nz-row nzGutter="32" style="margin-top:200px;" class="block">
+      <div nz-row>
+        <h3 id="title-ll">长文本 - 长文本语义匹配</h3>
+      </div>
+
+      <div nz-row nzGutter="32" style="margin-top:40px;">
+        <div nz-col nzSpan="12">
+          <div nz-row style="margin-top: 60px">
+            <h4>长文本输入框</h4>
+          </div>
+          <div
+            style="height:329px;padding:25px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+            <textarea nz-input name="" cols="30" rows="12" [(ngModel)]="ll.text1"></textarea>
+          </div>
+        </div>
+        <div nz-col nzSpan="12">
+          <div nz-row style="margin-top: 60px">
+            <h4>长文本输入框</h4>
+          </div>
+          <div
+            style="height:329px;padding:25px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+            <textarea nz-input name="" cols="30" rows="12" [(ngModel)]="ll.text2"></textarea>
+          </div>
+        </div>
+      </div>
+      <div nz-row nzGutter="0">
+        <div nz-col nzSpan="4">
+          <button nz-button [nzLoading]="ll.loading" nzType="primary" style="margin-top: 34px;" (click)="ll.click()">
+            立即匹配
+          </button>
+        </div>
+        <div nz-col nzSpan="16" style="z-index: 999;">
+          <div class="circle" style="margin-top:-25px;">
+            <div class="icon"></div>
+            <div class="text">匹配得分</div>
+            <div class="num">{{ll.point.toFixed(5)}}</div>
+          </div>
+        </div>
+        <div nz-col nzSpan="4"></div>
+      </div>
+      <div nz-row nzGutter="32">
+        <div nz-col nzSpan="12">
+          <div
+            style="margin-top: -40px;height:430px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+            <div class="topic">文档主题分布</div>
+            <div echarts style="height: 370px" (chartClick)="ll.test1($event)"  [options]="ll.option1"></div>
+
+          </div>
+        </div>
+        <div nz-col nzSpan="12">
+          <div
+            style="margin-top: -40px;height:430px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+            <div class="topic">文档主题分布</div>
+
+            <div echarts style="height: 370px" (chartClick)="ll.test2($event)" [options]="ll.option2"></div>
+
+          </div>
+        </div>
+      </div>
+      <div nz-row nzGutter="32" style="margin-top:60px;">
+        <div nz-col nzSpan="12">
+          <div nz-row
+               style="height:500px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+            <div nz-col nzSpan="24">
+              <div class="topic f-topic">"{{ll.top1}}" 主题下的词分布</div>
+
+              <div echarts style="height: 450px;" [options]="ll.optionPie1"></div>
+            </div>
+          </div>
+        </div>
+        <div nz-col nzSpan="12">
+          <div nz-row
+               style="height:500px;background:rgba(255,255,255,1);box-shadow:0px 29px 36px 0px rgba(125,138,159,0.13);border-radius:3px;border:1px solid rgba(201,209,219,0.1);">
+            <div nz-col nzSpan="24">
+              <div class="topic f-topic">"{{ll.top2}}" 主题下的词分布</div>
+
+              <div echarts style="height: 450px;" [options]="ll.optionPie2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    <div style="padding:150px;"></div>
+  </nz-content>
+</nz-layout>

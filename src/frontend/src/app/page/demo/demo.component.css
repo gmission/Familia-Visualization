@@ -1,0 +1,183 @@
+nz-layout {
+  background: url("../../../assets/images/banner.png") no-repeat top center,
+  url("../../../assets/images/bg_curve.png") no-repeat center 1712px,
+  url("../../../assets/images/bg_curve.png") no-repeat center 3363px,
+  url("../../../assets/images/Bottom.png") no-repeat bottom center,
+  #F6F8F9;
+
+  background-size: auto, auto, auto, 100%;
+}
+
+nz-content {
+  background: url("../../../assets/images/p1_bg.png") no-repeat 0px 1223px,
+  url("../../../assets/images/p2_pic.png") no-repeat 0px 2419px,
+  url("../../../assets/images/p1_bg.png") no-repeat 50% 3307px;
+  background-size: 992px, 702px 600px, auto;
+
+}
+
+@media screen and (max-width: 1280px) {
+  nz-layout {
+    width: 1280px;
+  }
+}
+
+nz-header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background: url("../../../assets/images/nav_bar.png") no-repeat center top transparent;
+  height: 100px;
+}
+
+.header, nz-content {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#header {
+  font-size: 20px;
+}
+
+.logo {
+  background: url("../../../assets/images/logo.png") no-repeat;
+  background-size: auto 100%;
+  height: 46px;
+  margin-top: 27px;
+}
+
+textarea {
+  resize: none;
+}
+
+.menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-top: 18px;
+}
+
+
+.menu a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.menu a:hover, .menu ant-menu-item-selected a {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+.introduction {
+  color: #fff;
+}
+
+.introduction h3 {
+  color: #fff;
+}
+
+textarea {
+  border: none;
+}
+
+.block h3 {
+  font-size: 48px;
+  font-weight: bold;
+  border-left: #2258b6 5px solid;
+  padding-left: 20px;
+  margin-left: 4px;
+}
+
+.circle {
+  height: 192px;
+  width: 192px;
+  background: url("../../../assets/images/score_round.png") center center;
+  overflow: hidden;
+  margin: -96px auto 0px;
+  z-index: 999;
+}
+
+.circle .icon {
+  background: url("../../../assets/images/score_icon.png") center center no-repeat;
+  height: 30px;
+  margin-top: 30px;
+}
+
+.circle .text {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.circle .num {
+  font-size: 36px;
+}
+
+.circle div {
+  color: #fff;
+  text-align: center;
+}
+
+#key-word-table {
+  height: 547px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 29px 36px 0px rgba(125, 138, 159, 0.13);
+  border-radius: 5px;
+  border: 1px solid rgba(201, 209, 219, 0.1);
+}
+
+#key-word-table th {
+  background: #2756DD;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+#key-word-table td {
+  text-align: center;
+  border: none;
+  padding: 14px 8px
+}
+
+[nz-carousel-content] {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  #background: #364d79;
+  #color: #fff;
+  overflow: hidden;
+}
+
+nz-header {
+  padding: 0px;
+}
+
+h3 {
+  height: 50px;
+  line-height: 50px;
+}
+
+#video {
+  box-shadow: 0 6px 18px -5px hsla(0, 0%, 68.6%, .5);
+}
+
+.dark {
+  background: #f8fafa;
+}
+
+
+.topic {
+  margin: 20px 40px;
+  padding-left: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  font-size: 18px;
+  background: url("../../../assets/images/themedistribution_icon.png") left no-repeat;
+}
+.f-topic{
+  background: url("../../../assets/images/pie-chart_icon.png") left no-repeat;
+}
+.y-topic{
+  background: url("../../../assets/images/xsd.png") left no-repeat;
+}
+
