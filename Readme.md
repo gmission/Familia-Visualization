@@ -17,7 +17,7 @@ Or, run with a prebuilt image:
 Then, check  http://127.0.0.1:8080
 
 
-####Ackowledgement
+#### Ackowledgement
 Semantic+ is based on Familia from baidu: https://github.com/baidu/Familia  and gMission from HKUST: https://github.com/gmission/gmission . 
 
 
