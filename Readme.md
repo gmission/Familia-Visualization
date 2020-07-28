@@ -27,15 +27,21 @@ Semantic+ 的语义分析基本分为两类：语义表示和语义匹配。
     
 
 
-#### Semantic+ 设置：
+#### Semantic+ 的安装使用：
 1.	打开term, 更换工作路径：
-    cd semanticplus
+
+        cd semanticplus
+
 2. 	构建Docker映像并运行:
-    docker build . semanticplus
-    docker run -p 8080:8080 semanticplus
+
+        docker build . semanticplus
+        docker run -p 8080:8080 semanticplus
+
 3.	或者，使用预设的映像运行
-    docker pull chenzhao/semanticplus
-    docker run -p 8080:8080  chenzhao/semanticplus
+
+        docker pull chenzhao/semanticplus
+        docker run -p 8080:8080  chenzhao/semanticplus
+
 4.	网页游览器开启 http://127.0.0.1:8080
 
 
