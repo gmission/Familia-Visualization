@@ -8,22 +8,22 @@ Semantic+ 的语义分析基本分为两类：语义表示和语义匹配。
 1) 语义表示：Semantic+支持文本分类，文本聚类，文本内容信息丰富度等。通过语义分析和主题建模，文本数据可以成为其他机器学习模型的特征。
     - 主题分布：通过训练有素的主题模型，我们可以获得每篇文章的主题分布并计算每个单词之间的关系，可以应用于文本分类和聚类。
     
-    <img src="images/图片 1.png" width="450" height="300">
-    <img src="images/图片 2.png" width="450" height="300">
+    <img src="images/1.png" width="450" height="300">
+    <img src="images/2.png" width="450" height="300">
     
     - 关键词提取：文本信息的丰富度是复杂排名模型的特点。我们可以通过主题建模来计算文本中关键字的分布，然后根据关键字分布的熵值进行分析。熵值越高，文本内容的丰富度越高。
     
-    <img src="images/图片 3.png" width="450" height="300">
-    <img src="images/图片 4.png" width="450" height="300">
+    <img src="images/3.png" width="450" height="300">
+    <img src="images/4.png" width="450" height="300">
     
 2) 语义匹配：Semantic +的语义匹分为2个类别，短-长文本匹配和长-长文本匹配。
     - 短-长文本匹配：这个类别下，由于查询的内容通常很短而用于配对的文本内容要长得多。系统将从文本中提取关键字组，以使文本简洁明了。我们可以看到，从系统中提取的前10个关键字保留了文本中的重要信息，并据此进行匹配度计分。Semantic+的短长文本匹配功能为搜索服务提供了一种方便的解决方案。
     
-       <img src="images/图片 5.png" width="450" height="300">
+       <img src="images/5.png" width="450" height="300">
        
     - 长-长文本匹配：长文本之间匹配是通过长文本主题分布的距离来评估长文本之间的语义相似性。Semantic+的长-长文本匹配功能为文本推荐类的应用提供了一种方便的解决方案。
     
-      <img src="images/图片 6.png" width="450" height="300">
+      <img src="images/6.png" width="450" height="300">
     
 
 
