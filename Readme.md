@@ -46,7 +46,7 @@ Semantic+ 的语义分析基本分为两类：语义表示和语义匹配。
 
 
 
-#### 致谢
+### 致谢
 Semantic+基于百度的Familia: https://github.com/baidu/Familia 和香港科技大学的gMission: https://github.com/gmission/gmission 的开源代码。
 
 
