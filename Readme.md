@@ -14,8 +14,8 @@ Familia-Visualization 是Familia的一个可视化工具，它支持语义表示
     
 2) 语义匹配用例
   
-    <img src="https://raw.githubusercontent.com/gmission/Familia-Visualization/master/images/5.png" width="360" height="240">
-    <img src="https://raw.githubusercontent.com/gmission/Familia-Visualization/master/images/6.png" width="360" height="240">
+    <img src="https://raw.githubusercontent.com/gmission/Familia-Visualization/master/images/5.png" width="600" height="300">
+    <img src="https://raw.githubusercontent.com/gmission/Familia-Visualization/master/images/6.png" width="600" height="300">
 
 
 #### Familia-Visualization 的安装使用：
